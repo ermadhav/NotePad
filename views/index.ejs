@@ -22,18 +22,23 @@
             </form>
         </div>
         <div class="tasks flex gap-3 flex-wrap p-10">
-            <% if (files && files.length > 0) { %>
+            <% if (files && files.length> 0) { %>
                 <% files.forEach(function(val) { %>
                     <div class="task  w-72 px-3 py-4 rounded-md bg-zinc-800">
-                        <h1 class="text-white min-w-72 text-3xl tracking-tighter"><%= val %></h1>
-                        <a class="text-blue-500 inline-block mt-3" href="/files/<%= val %>">Read More</a>
+                        <h1 class="text-white min-w-72 text-3xl tracking-tighter">
+                            <%= val %>
+                        </h1>
+                        <div class="flex w-full justify-between items-centre mt-3">
+                            <a class="text-blue-500 inline-block" href="/files/<%= val %>">Read More</a>
+                            <a class="text-zinc-600" href="/edit/<%= val %>">Edit</a>
+                        </div>
                     </div>
-                <% }) %>
-            <% } else { %>
-                <h3 class="text-zinc-600">No Task Yet</h3>
-            <% } %>
-        </div>      
+                    <% }) %>
+                        <% } else { %>
+                            <h3 class="text-zinc-600">No Task Yet</h3>
+                            <% } %>
         </div>
+    </div>
     </div>
 </body>
 
